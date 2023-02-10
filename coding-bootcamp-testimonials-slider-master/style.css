@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=DM+Sans:wght@400;700&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;400;600&family=Poppins:wght@400;500;600;700&family=Roboto:wght@300&family=Space+Grotesk:wght@500&display=swap');
+
+/* RESETS*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+ul,
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+ul,
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+:root {
+  --Dark-Blue: hsl(240, 38%, 20%);
+  --Grayish-Blue: hsl(240, 18%, 77%);
+}
+/* STYLES */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Barlow', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  font-family: 'Fraunces', serif;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  background: url(./images/pattern-curve.svg) no-repeat;
+  background-position: 0% 100%;
+  background-size: 20rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  text-align: center;
+  height: 100%;
+  background: url(./images/pattern-bg.svg) no-repeat;
+  background-size: 19rem;
+  background-position: 0% 1rem;
+}
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+.img-slider {
+  height: 15rem;
+}
+.content-slider {
+  width: 100%;
+  height: 20rem;
+}
+.img-container,
+.content,
+.img,
+.content-content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.img-slider {
+  width: 80%;
+}
+.content {
+  width: 100%;
+  margin: 0 auto;
+}
+.img,
+.content-content {
+  transition: transform 1s;
+}
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+.buttons {
+  width: 5rem;
+  height: 2.5rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  transform: translateY(-50%);
+  box-shadow: 0px 5px 10px 3px #ccc;
+}
+.content-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.img-slider {
+  margin-top: 3rem;
+}
+.content-slider {
+  margin-top: 3rem;
+  background: url(./images/pattern-quotes.svg) no-repeat;
+  background-position: 50% 0%;
+  background-size: 3.125rem;
+}
+.bold {
+  font-weight: 700;
+}
+.light {
+  font-weight: 500;
+  color: rgb(108, 108, 108);
+}
+@media screen and (min-width: 700px) {
+  body {
+    font-size: 1.8rem;
+    background: url(./images/pattern-bg.svg) no-repeat,
+      url(./images/pattern-curve.svg) no-repeat;
+    background-position: 82% 30%, 0% 100%;
+    background-size: 38rem, auto;
+  }
+  main {
+    width: 75%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 90% 10%;
+    background: none;
+  }
+  .img-slider {
+    grid-column: 2/3;
+    grid-row: span 1;
+  }
+  .content-slider {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    height: 100%;
+    width: 120%;
+    text-align: left;
+    background-size: 6.25rem;
+    background-position: 20% 12%;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-slider {
+    height: 100%;
+    width: 85%;
+    margin: 0 auto;
+  }
+  .buttons {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: center;
+  }
+  .content-content {
+    height: fit-content;
+    top: 20%;
+  }
+  div:has(> .bold) {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+  }
+}

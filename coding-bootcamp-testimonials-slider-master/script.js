@@ -38,3 +38,22 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'ArrowLeft') prevSlide();
   if (e.key === 'ArrowRight') nextSlide();
 });
+
+let touchstartX = 0;
+let touchendX = 0;
+const checkDirection = function () {
+  if (touchendX > touchstartX) {
+    goToSlide(currentSlide);
+  }
+  if (touchstartX > touchendX) {
+    goToSlide(currentSlide + 1);
+  }
+};
+document.addEventListener('touchend', function (e) {
+  touchendX = e.changedTouches[0].screenX;
+  checkDirection();
+});
+document.addEventListener('touchstart', function (e) {
+  touchstartX = e.changedTouches[0].screenX;
+  checkDirection();
+});
